@@ -1,0 +1,73 @@
+﻿@model IEnumerable<eMag2.Models.Product>
+
+@{
+    ViewBag.Title = "View All Products";
+}
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                @{ var productsPerRow = 1; }
+                @foreach (var product in Model)
+                {
+                    if (productsPerRow <= 3)
+                    {
+                        <div class="text-center col-md-4" style="padding-top: 2rem; padding-left: 0.5rem; padding-right: 0.5rem; padding-bottom: 1rem; margin-bottom: 0.5rem; background: white; min-height: 439px;">
+                            <div>
+                                <img src="@Url.Content(product.ImagePath)" alt="@product.Name" height="167" width="167"/>
+                            </div>
+                            <div>
+                                @{
+                                    var rating = product.Rating; // Aici se inlocuieste cu ratingul total al produsului
+                                    for (var i = 0; i < 5; i++)
+                                    {
+                                        if (i <= (rating - 0.5))
+                                        {
+                                            <span class="fa fa-star checked"></span>
+                                        }
+                                        else
+                                        {
+                                            <span class="fa fa-star"></span>
+                                        }
+                                    }
+                                    @product.Rating
+                                }
+                            </div>
+                            @Html.ActionLink(@product.Name, "Details", "Products", new {id = product.Id}, null)
+                            <p>by @product.SoldBy</p>
+                            @if (product.NumberInStock > 10)
+                            {
+                                <p class="small text-success">Sufficient stock</p>
+                            }
+                            else if (product.NumberInStock > 3)
+                            {
+                                <p class="small text-warning">Limited availability</p>
+                            }
+                            else
+                            {
+                                <p class="small text-danger">Only @product.NumberInStock left in stock - order soon</p>
+                            }
+                            @if (product.DiscountedPrice != 0)
+                            {
+                                <del>@product.FullPrice <span class="small">Lei</span></del>
+                                <p>@product.DiscountedPrice <span>Lei</span></p>
+                            }
+                            else
+                            {
+                                <p></p>
+                                <p>@product.FullPrice <span>Lei</span></p>
+                            }
+                            @Html.ActionLink("Add to Cart", "AddToCart", "Products", null, new {@class = "btn btn-primary"})
+                        </div>
+                        productsPerRow++;
+                    }
+                    if (productsPerRow > 3)
+                    {
+                        <div class="row"></div>
+                        productsPerRow = 1;
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
