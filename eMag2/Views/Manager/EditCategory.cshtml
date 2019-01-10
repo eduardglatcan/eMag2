@@ -1,0 +1,25 @@
+﻿@model eMag2.ViewModels.NewCategoryViewModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Edit a Category</h2>
+<section>
+    <div class="container">
+        <div class="row">
+            @using (Html.BeginForm("ConfirmEdit", "Manager", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true, "Please fix the following errors:", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name)
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
+                @Html.HiddenFor(m=>m.Id)
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-primary">Save</button>
+            }
+        </div>
+    </div>
+</section>

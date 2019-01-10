@@ -49,9 +49,8 @@ namespace eMag2.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Username or Email")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +63,11 @@ namespace eMag2.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [RegularExpression("^[-0-9A-Za-z_]{4,15}$", ErrorMessage = "Username must be at least 5 and maximum 12 characters long and contain only letters, numbers and \"-_\" symbols.")]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

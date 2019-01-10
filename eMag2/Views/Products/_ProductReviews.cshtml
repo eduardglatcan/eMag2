@@ -1,0 +1,178 @@
+﻿@using eMag2.Models
+<section id="reviewsSection" class="mt-5">
+    <div class="container" style="background: white">
+        <h2>Reviews</h2>
+        <hr/>
+        <div class="row m-5">
+
+            @{
+
+                if (@Model.Product.CommentCount > 1)
+                {
+                    <div class="col-md-6">
+                        <h3>General rating of the product</h3>
+                        @{
+                            var generalRating = Model.Product.Rating;
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (i <= (generalRating - 0.5))
+                                {
+                                    <span class="fa fa-star checked"></span>
+                                }
+                                else
+                                {
+                                    <span class="fa fa-star"></span>
+                                }
+                            }
+
+                            @generalRating.ToString("#.##")
+                            <p>
+                                (
+                                @Model.Product.CommentCount
+                                reviews
+                                )
+                            </p>
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Do you have or tested this product?</h4>
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+                        <br/>
+                        <h5>Give us a rating</h5>
+                        <br/>
+                        @Html.ActionLink("Add a review", "AddReview", "Products", new {id = Model.Product.Id}, new {@class = "btn btn-primary"})
+                    </div>
+                }
+                else if (@Model.Product.CommentCount == 1)
+                {
+                    <div class="col-md-6">
+                        <h3>General rating of the product</h3>
+                        @{
+                            var generalRating = Model.Product.Rating;
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (i <= (generalRating - 0.5))
+                                {
+                                    <span class="fa fa-star checked"></span>
+                                }
+                                else
+                                {
+                                    <span class="fa fa-star"></span>
+                                }
+                            }
+
+                            @generalRating.ToString("#.##")
+                            <p>
+                                (
+                                @Model.Product.CommentCount
+                                review
+                                )
+                            </p>
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Do you have or tested this product?</h4>
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+                        <br/>
+                        <h5>Give us a rating</h5>
+                        <br/>
+                        @Html.ActionLink("Add a review", "AddReview", "Products", new {id = Model.Product.Id}, new {@class = "btn btn-primary"})
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-6">
+                        <h4>Be the first to write a review</h4>
+                        <p>Tell us your opinion by giving a rating!</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Do you have or tested this product?</h4>
+                        @* ReSharper disable once UnknownCssClass *@
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+                        <br/>
+                        <h5>Give us a rating</h5>
+                        <br/>
+                        @Html.ActionLink("Add a review", "AddReview", "Products", new {id = Model.Product.Id}, new {@class = "btn btn-primary"})
+                    </div>
+                }
+            }
+        </div>
+        <div class="row">
+            @foreach (var review in Model.Reviews)
+            {
+                <div class="row m-5">
+                    <div class="col-md-3">
+                        @{
+                            foreach (var user in Model.User)
+                            {
+                                if (user.Id == review.UserId)
+                                {
+                                    @user.UserName
+                                }
+                            }
+                        }
+                        <br>
+                        @review.PostedDate.ToShortDateString()
+                        <br/>
+                        <br/>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            if (User.IsInRole("Admin"))
+                            {
+                                @Html.ActionLink("Edit Review", "EditReview", "Manager", new{@review.Id}, new {@class="btn btn-warning"})
+                            }
+                        }<br/>
+                        <br/>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            if (User.IsInRole("Admin"))
+                            {
+                                @Html.ActionLink("Delete Review", "DeleteReview", "Manager", new{@review.Id}, new {@class="btn btn-danger"})
+                            }
+                        }
+                    </div>
+                    <div class="col-md-9">
+                        @review.Title
+                        <br/>
+                        @{
+
+                            var reviewRating = review.Rating;
+                            for
+                                (int i = 0;
+                                i <
+                                5;
+                                i
+                                    ++)
+                            {
+                                if (i <= (reviewRating - 0.5))
+                                {
+                                    <span class="fa fa-star checked"></span>
+                                }
+                                else
+                                {
+                                    <span class="fa fa-star"></span>
+                                }
+                            }
+                        }
+                        <br/>
+                        <br/>
+
+                        @review.Comment
+                        <br/>
+                        <i class="fas fa-heart text-danger"></i> @review.Likes
+                    </div>
+                </div>
+                <hr/>
+            }
+        </div>
+    </div>
+</section>

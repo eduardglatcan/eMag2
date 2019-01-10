@@ -1,0 +1,45 @@
+﻿@model IEnumerable<eMag2.ViewModels.UserViewModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Users</h2>
+
+<section>
+    <div class="container p-5" style="background: white;">
+        <table class="table table-bordered table-responsive table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Make Admin</th>
+                <th>Make Colab</th>
+                <th>Revoke Roles</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.User.Id</td>
+                    <td>@user.User.UserName</td>
+                    <td>@user.User.Email</td>
+                    <td>
+                        @{
+                            @user.Role
+                        }
+                    </td>
+                    <td>@Html.ActionLink("Make Admin", "GiveRankAdmin", "Manager", new {@user.User.Id}, new {@class = "btn btn-danger"})</td>
+                    <td>@Html.ActionLink("Make Colab", "GiveRankColab", "Manager", new {@user.User.Id}, new {@class = "btn btn-warning"})</td>
+                    <td>@Html.ActionLink("Make User", "GiveRankUser", "Manager", new {@user.User.Id}, new {@class = "btn btn-success"})</td>
+
+                </tr>
+            }
+
+            </tbody>
+        </table>
+    </div>
+</section>

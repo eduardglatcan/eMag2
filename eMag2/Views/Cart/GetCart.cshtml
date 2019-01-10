@@ -1,0 +1,66 @@
+﻿@model eMag2.ViewModels.CartViewModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>My cart</h2>
+<section>
+    <div class="container p-5" style="background: white">
+        @{
+            if (Model.NumberOfItems != 0)
+            {
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Product Name </th>
+                            <th>Price</th>
+                            <th>Pieces</th>
+                            <th>Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @foreach (var product in Model.Products)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@Url.Content(product.ImagePath)" alt="@product.Name" width="150" height="150"/>
+                                </td>
+                                <td>
+                                    @product.Name
+                                </td>
+                                <td>
+                                    @if (product.DiscountedPrice != 0)
+                                    {
+                                        @product.DiscountedPrice
+                                    }
+                                    else
+                                    {
+                                        @product.FullPrice
+                                    }
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Remove", "RemoveProductFromCart", "Cart", new {@product.Id}, new {@class = "btn btn-danger mr-3"})
+                                </td>
+                            </tr>
+                        }
+
+                        </tbody>
+                    </table>
+                    @Html.ActionLink("Clean Cart", "CleanCart", "Cart", null, new {@class = "btn btn-danger mr-4"})
+                    @Html.ActionLink("Checkout", "CheckOut", "Cart", null, new {@class = "btn btn-success mr-3"})
+            }
+            else
+            {
+                <h2 class="text-info">You don't have any items in your cart!</h2>
+            }
+        }
+
+        @Html.ActionLink("Continue Shopping", "Index", "Products", null, new {@class = "btn btn-warning"})
+    </div>
+</section>

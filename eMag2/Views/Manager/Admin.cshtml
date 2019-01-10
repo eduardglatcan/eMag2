@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNet.Identity
+@model dynamic
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Welcome to admin tab, @User.Identity.GetUserName()</h2>
+<section>
+    <div class="container p-5" style="background: white;">
+        <div class="row">
+            @Html.ActionLink("See Registered Users", "GetUsers", "Manager", null, new { @class = "btn btn-primary" })
+            <hr />
+            @Html.ActionLink("View, Edit and Delete Categories", "ViewCategories", "Manager", null, new { @class = "btn btn-success" })
+            <hr/>
+            @Html.ActionLink("See Pending Products", "GetPendingProducts", "Manager", null, new {@class="btn btn-warning"})
+            <hr />
+            @Html.ActionLink("Add a Product", "AddItem", "Colab", null, new {@class = "btn btn-info"})
+            <hr/>
+            @Html.ActionLink("See Denied Products", "GetDeniedProducts", "Manager" ,null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+</section>

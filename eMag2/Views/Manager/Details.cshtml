@@ -1,0 +1,78 @@
+﻿@model eMag2.ViewModels.ProductViewModel
+
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<section id="productInfo">
+    <div class="container" style="background: white; margin-top: 5rem;">
+        <div class="row mx-5">
+            <h1>@Model.Product.Name</h1>
+            <p class="small text-muted">@Model.Product.InternalCode</p>
+            <hr />
+        </div>
+        <div class="row mx-5">
+            <div class="col-md-6">
+                <img src="@Url.Content(Model.Product.ImagePath)" alt="@Model.Product.Name" class="img-responsive" />
+            </div>
+            <div class="col-md-4">
+                Customers reviews
+                <div class="my-2">
+                    @{
+                        var rating = Model.Product.Rating;
+                        for (int i = 0; i < 5; i++)
+                        {
+                            if (i <= (rating - 0.5))
+                            {
+                                <span class="fa fa-star checked"></span>
+                            }
+                            else
+                            {
+                                <span class="fa fa-star"></span>
+                            }
+                        }
+                        @Model.Product.Rating
+                    }
+                </div>
+                <div>
+                    @if (@Model.Product.CommentCount == 0)
+                    {
+                        <a href="#reviewsSection">Leave a review!</a>
+                    }
+                    else if (@Model.Product.CommentCount == 1)
+                    {
+                        <a href="#reviewsSection">View @Model.Product.CommentCount review</a>
+                    }
+                    else
+                    {
+                        <a href="#reviewsSection">View @Model.Product.CommentCount reviews</a>
+                    }
+                </div>
+                <div class="my-4">
+                    <span class="text-muted">Sold by: </span>@Model.Product.SoldBy
+                </div>
+                <div class="col-md-9"><i class="fas fa-truck-moving"></i> Standard delivery</div>
+                <div class="col-md-offset-9">
+                    @if (@Model.Product.FullPrice > 2000)
+                    {
+                        <span class="text-success">No Costs</span>
+                    }
+                    else
+                    {
+                        <span class="text-warning">18 Lei</span>
+                    }
+                </div>
+                <hr />
+                <div>
+                    <i class="fas fa-box"></i><span> Open package upon delivery</span><br />
+                    <i class="fas fa-award"></i>
+                    <span> 30 days money back guarantee</span>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row"> </div>
+
+    </div>
+</section>
+@Html.Partial("_ProductDescription")

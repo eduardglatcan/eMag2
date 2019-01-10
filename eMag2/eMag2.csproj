@@ -55,6 +55,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -174,26 +177,122 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ColabController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901080020440_InitialCreate.cs" />
+    <Compile Include="Migrations\201901080020440_InitialCreate.Designer.cs">
+      <DependentUpon>201901080020440_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901080053246_AddProductReviewCategory.cs" />
+    <Compile Include="Migrations\201901080053246_AddProductReviewCategory.Designer.cs">
+      <DependentUpon>201901080053246_AddProductReviewCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901080155532_UpdateProductsTableWithStockPriceVendor.cs" />
+    <Compile Include="Migrations\201901080155532_UpdateProductsTableWithStockPriceVendor.Designer.cs">
+      <DependentUpon>201901080155532_UpdateProductsTableWithStockPriceVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901081700449_UpdateProductWithPriceAndDiscountPrice.cs" />
+    <Compile Include="Migrations\201901081700449_UpdateProductWithPriceAndDiscountPrice.Designer.cs">
+      <DependentUpon>201901081700449_UpdateProductWithPriceAndDiscountPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901081729502_UpdateProductsTableWIthInternalCodeCollumn.cs" />
+    <Compile Include="Migrations\201901081729502_UpdateProductsTableWIthInternalCodeCollumn.Designer.cs">
+      <DependentUpon>201901081729502_UpdateProductsTableWIthInternalCodeCollumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901081925525_UpdateProductsTableWithCommentCount.cs" />
+    <Compile Include="Migrations\201901081925525_UpdateProductsTableWithCommentCount.Designer.cs">
+      <DependentUpon>201901081925525_UpdateProductsTableWithCommentCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901082148111_UpdateReviewTableWithMoreInfo.cs" />
+    <Compile Include="Migrations\201901082148111_UpdateReviewTableWithMoreInfo.Designer.cs">
+      <DependentUpon>201901082148111_UpdateReviewTableWithMoreInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901082224347_UpdateReviewsTableWithLikes.cs" />
+    <Compile Include="Migrations\201901082224347_UpdateReviewsTableWithLikes.Designer.cs">
+      <DependentUpon>201901082224347_UpdateReviewsTableWithLikes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901082354531_Check.cs" />
+    <Compile Include="Migrations\201901082354531_Check.Designer.cs">
+      <DependentUpon>201901082354531_Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901090114094_UpdateReviewCustomerToString.cs" />
+    <Compile Include="Migrations\201901090114094_UpdateReviewCustomerToString.Designer.cs">
+      <DependentUpon>201901090114094_UpdateReviewCustomerToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901090204184_ChangeReviewTable.cs" />
+    <Compile Include="Migrations\201901090204184_ChangeReviewTable.Designer.cs">
+      <DependentUpon>201901090204184_ChangeReviewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901090237106_UpdateReviewTableAgain.cs" />
+    <Compile Include="Migrations\201901090237106_UpdateReviewTableAgain.Designer.cs">
+      <DependentUpon>201901090237106_UpdateReviewTableAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901101020079_UpdateDatabaseNew.cs" />
+    <Compile Include="Migrations\201901101020079_UpdateDatabaseNew.Designer.cs">
+      <DependentUpon>201901101020079_UpdateDatabaseNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901101023286_ChangeProductImageRequired.cs" />
+    <Compile Include="Migrations\201901101023286_ChangeProductImageRequired.Designer.cs">
+      <DependentUpon>201901101023286_ChangeProductImageRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901101036261_CorrectProductCategory.cs" />
+    <Compile Include="Migrations\201901101036261_CorrectProductCategory.Designer.cs">
+      <DependentUpon>201901101036261_CorrectProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901101437274_UpdateProductWithRightVendorName.cs" />
+    <Compile Include="Migrations\201901101437274_UpdateProductWithRightVendorName.Designer.cs">
+      <DependentUpon>201901101437274_UpdateProductWithRightVendorName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901101503264_UpdateProductTableWithPostedCollumn.cs" />
+    <Compile Include="Migrations\201901101503264_UpdateProductTableWithPostedCollumn.Designer.cs">
+      <DependentUpon>201901101503264_UpdateProductTableWithPostedCollumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901101647210_UpdateProductWithOwnerOfProduct.cs" />
+    <Compile Include="Migrations\201901101647210_UpdateProductWithOwnerOfProduct.Designer.cs">
+      <DependentUpon>201901101647210_UpdateProductWithOwnerOfProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CartViewModel.cs" />
+    <Compile Include="ViewModels\EditReviewViewModel.cs" />
+    <Compile Include="ViewModels\NewCategoryViewModel.cs" />
+    <Compile Include="ViewModels\NewProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ReviewFormViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\readable.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\tv1.jpg" />
+    <Content Include="img\tv2.jpeg" />
+    <Content Include="img\tv3.jpg" />
+    <Content Include="img\tv4.jpg" />
+    <Content Include="img\tv5.jpg" />
+    <Content Include="img\tv6.jpg" />
+    <Content Include="img\tv7.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -218,8 +317,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -242,9 +339,32 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\_ProductDescription.cshtml" />
+    <Content Include="Views\Products\_ProductReviews.cshtml" />
+    <Content Include="Views\Products\AddReview.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\GetCart.cshtml" />
+    <Content Include="Views\Manager\GetUsers.cshtml" />
+    <Content Include="Views\Colab\AddItem.cshtml" />
+    <Content Include="Views\Manager\GetPendingProducts.cshtml" />
+    <Content Include="Views\Manager\Details.cshtml" />
+    <Content Include="Views\Manager\_ProductDescription.cshtml" />
+    <Content Include="Views\Manager\GetDeniedProducts.cshtml" />
+    <Content Include="Views\Colab\EditItem.cshtml" />
+    <Content Include="Views\Manager\Admin.cshtml" />
+    <Content Include="Views\Manager\ViewCategories.cshtml" />
+    <Content Include="Views\Manager\NewCategory.cshtml" />
+    <Content Include="Views\Manager\EditCategory.cshtml" />
+    <Content Include="Views\Products\ProductSearch.cshtml" />
+    <Content Include="Views\Manager\EditReview.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ActionFilters\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Views\NewCategoryViewModel\" />
+    <Folder Include="Views\Reviews\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -258,6 +378,62 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901080020440_InitialCreate.resx">
+      <DependentUpon>201901080020440_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901080053246_AddProductReviewCategory.resx">
+      <DependentUpon>201901080053246_AddProductReviewCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901080155532_UpdateProductsTableWithStockPriceVendor.resx">
+      <DependentUpon>201901080155532_UpdateProductsTableWithStockPriceVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901081700449_UpdateProductWithPriceAndDiscountPrice.resx">
+      <DependentUpon>201901081700449_UpdateProductWithPriceAndDiscountPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901081729502_UpdateProductsTableWIthInternalCodeCollumn.resx">
+      <DependentUpon>201901081729502_UpdateProductsTableWIthInternalCodeCollumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901081925525_UpdateProductsTableWithCommentCount.resx">
+      <DependentUpon>201901081925525_UpdateProductsTableWithCommentCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901082148111_UpdateReviewTableWithMoreInfo.resx">
+      <DependentUpon>201901082148111_UpdateReviewTableWithMoreInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901082224347_UpdateReviewsTableWithLikes.resx">
+      <DependentUpon>201901082224347_UpdateReviewsTableWithLikes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901082354531_Check.resx">
+      <DependentUpon>201901082354531_Check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901090114094_UpdateReviewCustomerToString.resx">
+      <DependentUpon>201901090114094_UpdateReviewCustomerToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901090204184_ChangeReviewTable.resx">
+      <DependentUpon>201901090204184_ChangeReviewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901090237106_UpdateReviewTableAgain.resx">
+      <DependentUpon>201901090237106_UpdateReviewTableAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901101020079_UpdateDatabaseNew.resx">
+      <DependentUpon>201901101020079_UpdateDatabaseNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901101023286_ChangeProductImageRequired.resx">
+      <DependentUpon>201901101023286_ChangeProductImageRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901101036261_CorrectProductCategory.resx">
+      <DependentUpon>201901101036261_CorrectProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901101437274_UpdateProductWithRightVendorName.resx">
+      <DependentUpon>201901101437274_UpdateProductWithRightVendorName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901101503264_UpdateProductTableWithPostedCollumn.resx">
+      <DependentUpon>201901101503264_UpdateProductTableWithPostedCollumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901101647210_UpdateProductWithOwnerOfProduct.resx">
+      <DependentUpon>201901101647210_UpdateProductWithOwnerOfProduct.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
