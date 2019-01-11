@@ -181,9 +181,13 @@
     <Compile Include="Controllers\ColabController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
+=======
+    <Compile Include="Controllers\ProductsController.cs" />
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +207,7 @@
     <Compile Include="Migrations\201901081700449_UpdateProductWithPriceAndDiscountPrice.Designer.cs">
       <DependentUpon>201901081700449_UpdateProductWithPriceAndDiscountPrice.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\201901081729502_UpdateProductsTableWIthInternalCodeCollumn.cs" />
     <Compile Include="Migrations\201901081729502_UpdateProductsTableWIthInternalCodeCollumn.Designer.cs">
       <DependentUpon>201901081729502_UpdateProductsTableWIthInternalCodeCollumn.cs</DependentUpon>
@@ -259,6 +264,8 @@
     <Compile Include="Migrations\201901101647210_UpdateProductWithOwnerOfProduct.Designer.cs">
       <DependentUpon>201901101647210_UpdateProductWithOwnerOfProduct.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -340,6 +347,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\_ProductDescription.cshtml" />
     <Content Include="Views\Products\_ProductReviews.cshtml" />
@@ -359,6 +367,8 @@
     <Content Include="Views\Manager\EditCategory.cshtml" />
     <Content Include="Views\Products\ProductSearch.cshtml" />
     <Content Include="Views\Manager\EditReview.cshtml" />
+=======
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ActionFilters\" />
@@ -392,6 +402,7 @@
     <EmbeddedResource Include="Migrations\201901081700449_UpdateProductWithPriceAndDiscountPrice.resx">
       <DependentUpon>201901081700449_UpdateProductWithPriceAndDiscountPrice.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201901081729502_UpdateProductsTableWIthInternalCodeCollumn.resx">
       <DependentUpon>201901081729502_UpdateProductsTableWIthInternalCodeCollumn.cs</DependentUpon>
     </EmbeddedResource>
@@ -434,6 +445,8 @@
     <EmbeddedResource Include="Migrations\201901101647210_UpdateProductWithOwnerOfProduct.resx">
       <DependentUpon>201901101647210_UpdateProductWithOwnerOfProduct.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

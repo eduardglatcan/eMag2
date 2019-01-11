@@ -11,6 +11,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Products", "Index", "Products")</li>
+<<<<<<< HEAD
                 @if (User.Identity.IsAuthenticated)
                 {
                     if (User.IsInRole("Colab"))
@@ -37,6 +38,10 @@
                         My Cart <i class="fas fa-arrow-down"></i>
                     </a>
                 </li>
+=======
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
             </ul>
             <div class="col-sm-3 col-md-3">
                 @using (Html.BeginForm("Search", "Products", FormMethod.Get, new { @class = "navbar-form" }))

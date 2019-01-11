@@ -204,6 +204,7 @@ textarea { max-width: 280px; }
 .ml-auto,
 .mx-auto { margin-left: auto !important; }
 
+<<<<<<< HEAD
 .checked { color: orange; }
 
 .rating {
@@ -258,3 +259,6 @@ textarea { max-width: 280px; }
 
 .ck-editor__editable { min-height: 250px !important;
 }
+=======
+.checked { color: orange; }
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0

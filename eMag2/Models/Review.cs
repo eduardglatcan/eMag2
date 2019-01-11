@@ -12,6 +12,7 @@ namespace eMag2.Models
         public int AssociatedProductId { get; set; }
         [Required(ErrorMessage = "If you want to give a review to this product you must least a rating!")]
         public byte Rating { get; set; }
+<<<<<<< HEAD
 
         public string UserId { get; set; }
         public DateTime PostedDate { get; set; }
@@ -20,5 +21,9 @@ namespace eMag2.Models
         public int Likes { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
+=======
+        public string Comment { get; set; }
+
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
     }
 }

@@ -114,6 +114,7 @@ C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.UpdateProductWithPriceAndDiscountPrice.resources
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.UpdateProductsTableWIthInternalCodeCollumn.resources
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.UpdateProductsTableWithCommentCount.resources
+<<<<<<< HEAD
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.UpdateReviewTableWithMoreInfo.resources
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.UpdateReviewsTableWithLikes.resources
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.Check.resources
@@ -128,3 +129,5 @@ C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.UpdateProductWithRightVendorName.resources
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.UpdateProductTableWithPostedCollumn.resources
 C:\Users\Eduard\OneDrive\Desktop\Developmnet\MVS Projects\eMag2\eMag2\obj\Debug\eMag2.Migrations.UpdateProductWithOwnerOfProduct.resources
+=======
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0

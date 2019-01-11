@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
@@ -6,12 +7,22 @@ using System.Data.Entity;
 using System.Web.Security;
 using eMag2.ViewModels;
 using Microsoft.AspNet.Identity;
+=======
+﻿using System.Linq;
+using System.Web.Mvc;
+using eMag2.Models;
+using System.Data.Entity;
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
 
 namespace eMag2.Controllers
 {
     public class ProductsController : Controller
     {
+<<<<<<< HEAD
         private readonly ApplicationDbContext _context;
+=======
+        private ApplicationDbContext _context;
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
 
         public ProductsController()
         {
@@ -22,7 +33,10 @@ namespace eMag2.Controllers
         {
             _context.Dispose();
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
         // GET: Products
         public ViewResult Index()
         {
@@ -30,6 +44,7 @@ namespace eMag2.Controllers
 
             return View(products);
         }
+<<<<<<< HEAD
 
         public ActionResult Details(int id)
         {
@@ -101,5 +116,14 @@ namespace eMag2.Controllers
                 return View("Index", products);
             }
         }
+=======
+        public ActionResult Details(int id)
+        {
+            var product = _context.Products.Include(c => c.Category).SingleOrDefault(c => c.Id == id);
+            if (product == null)
+                return HttpNotFound();
+            return View(product);
+        } 
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
     }
 }

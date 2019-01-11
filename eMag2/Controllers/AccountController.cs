@@ -161,11 +161,17 @@ namespace eMag2.Controllers
         {
             if (ModelState.IsValid)
             {
+<<<<<<< HEAD
                 var context = new ApplicationDbContext();
                 var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
                 var user = new ApplicationUser
                 {
                     UserName = model.UserName,
+=======
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+>>>>>>> 9317837701c2b79591122ea61468e137a92fe3f0
                     Email = model.Email
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
